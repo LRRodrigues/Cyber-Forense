@@ -1,4 +1,5 @@
 🔐 Segurança da Informação & Forense Digital 🕵️‍♂️
+
 Repositório dedicado a projetos práticos, estudos e experimentos nas áreas de Cibersegurança e Perícia Forense Digital.
 
 Este repositório reúne uma coleção de ferramentas, scripts, relatórios técnicos e laboratórios que desenvolvi como parte dos meus estudos e projetos voltados para segurança da informação e análise forense. É um espaço de aprendizado contínuo e aprofundamento técnico nas áreas mais críticas da defesa cibernética.
