@@ -90,4 +90,5 @@ Cisco Packet Tracer / GNS3 / EVE-NG
 
 
 ⚠️ Aviso Legal
+
 Este repositório é destinado exclusivamente a fins educacionais e de pesquisa. Todas as ferramentas e técnicas documentadas aqui são utilizadas em ambientes de laboratório controlados. Qualquer uso indevido é de responsabilidade exclusiva do usuário.
