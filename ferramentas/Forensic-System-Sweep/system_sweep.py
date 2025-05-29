@@ -95,6 +95,13 @@ def get_file_analysis():
         "scripts": scripts
     }
 
+def get_bios_info():
+    try:
+        bios_info = subprocess.getoutput("dmidecode -t bios")
+        return bios_info
+    except Exception as e:
+        return f"Erro ao obter informações da BIOS: {e}"
+
 def generate_hmac(data_str: str):
     return hmac.new(SECRET_KEY, data_str.encode(), hashlib.sha256).hexdigest()
 
@@ -123,7 +130,8 @@ def run_local_sweep():
         "open_ports": get_network_ports(),
         "processes": get_processes(),
         "logs": get_logs(),
-        "files": get_file_analysis()
+        "files": get_file_analysis(),
+        "bios_info": get_bios_info()
     }
     save_output(sweep, FILENAME)
 
@@ -149,7 +157,8 @@ def run_remote_sweep(host, user, password):
             "logs": "tail -n 50 /var/log/auth.log; tail -n 50 /var/log/syslog",
             "hidden": "find /home -type f -name '.*'",
             "recent_exec": "find /home -type f -perm -111 -mtime -7",
-            "scripts": "find /home -type f \( -name '*.sh' -o -name '*.py' \)"
+            "scripts": "find /home -type f \( -name '*.sh' -o -name '*.py' \)",
+            "bios_info": "dmidecode -t bios"
         }
         results = {}
         for key, cmd in cmds.items():
